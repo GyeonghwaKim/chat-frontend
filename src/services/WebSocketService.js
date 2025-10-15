@@ -25,7 +25,7 @@ class WebSocketService {
    * @param {function} onConnected - 연결 성공 콜백
    * @param {function} onError - 연결 실패 콜백
    */
-  
+  connect(userId, onConnected, onError) {
     const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
     this.stompClient = new Client({
       webSocketFactory: () => new SockJS(`${API_URL}/ws`),
